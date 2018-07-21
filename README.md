@@ -2,6 +2,28 @@
 
 [![Build Status](https://travis-ci.org/ddubson/java-date-time-examples.svg?branch=master)](https://travis-ci.org/ddubson/java-date-time-examples)
 
+Current Date/Time in UTC
+
+```java
+// Path 1
+Instant instantNow = Instant.now();
+
+// Path 2
+ZonedDateTime now = ZonedDateTime.now();
+```
+
+Current Date/Time in 'America/New_York' Timezone:
+
+```java
+ZoneId americaNewYork = ZoneId.of("America/New_York");
+
+// Path 1
+Instant.now().atZone(americaNewYork);
+
+// Path 2
+ZonedDateTime.now().atZone(americaNewYork);
+```
+
 ## Example 1: UTC Date to Custom Format
 
 ```java

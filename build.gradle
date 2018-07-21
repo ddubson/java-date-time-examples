@@ -17,6 +17,8 @@ dependencies {
     runtime "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
     runtime "org.junit.platform:junit-platform-console:$junitPlatformVersion"
     testCompile 'org.hamcrest:hamcrest-all:1.3'
+    compile 'org.projectlombok:lombok:1.18.0'
+    compile 'ch.qos.logback:logback-classic:1.3.0-alpha4'
 }
 
 repositories {
