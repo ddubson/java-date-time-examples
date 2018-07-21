@@ -1,5 +1,7 @@
 # Java 8+ Date/Time Examples
 
+[![Build Status](https://travis-ci.org/ddubson/java-date-time-examples.svg?branch=master)](https://travis-ci.org/ddubson/java-date-time-examples)
+
 ## Example 1: UTC Date to Custom Format
 
 ```java
