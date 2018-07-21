@@ -2,8 +2,20 @@ plugins {
     id 'java'
 }
 
+ext {
+    junitVersion = "5.2.0"
+    junitPlatformVersion = "1.2.0"
+}
+
+test {
+    useJUnitPlatform()
+}
+
 dependencies {
-    testCompile 'junit:junit:4.12'
+    testCompile "org.junit.jupiter:junit-jupiter-api:$junitVersion"
+    testCompile "org.junit.jupiter:junit-jupiter-params:$junitVersion"
+    runtime "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
+    runtime "org.junit.platform:junit-platform-console:$junitPlatformVersion"
     testCompile 'org.hamcrest:hamcrest-all:1.3'
 }
 
