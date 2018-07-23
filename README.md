@@ -24,6 +24,8 @@ Instant.now().atZone(americaNewYork);
 ZonedDateTime.now().atZone(americaNewYork);
 ```
 
+Full list of Zone IDs: [Java Time Zone Ids](docs/java-time-zone-ids.md)
+
 ## Example 1: UTC Date to Custom Format
 
 ```java
@@ -35,8 +37,6 @@ DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern(outputFormat).wi
 LocalDate parsedDate = LocalDate.from(inputFormatter.parse(inputDate));
 String outputDate = parsedDate.format(outputFormatter);
 `````
-
-Full list of Zone IDs: [Java Time Zone Ids](docs/java-time-zone-ids.md)
 
 ## Example 2: Custom Date Format to UTC Date
 
