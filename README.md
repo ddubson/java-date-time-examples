@@ -27,14 +27,25 @@ ZonedDateTime.now().atZone(americaNewYork);
 ## Example 1: UTC Date to Custom Format
 
 ```java
-String inputDate = "2018-11-30";
-String expectedOutputDate = "November 30 2018";
-
-String inputFormat = "yyyy-MM-dd";
 String outputFormat = "MMMM dd yyyy";
 
-DateTimeFormatter inputFormatter = DateTimeFormatter.ofPattern(inputFormat).withLocale(Locale.US);
+DateTimeFormatter inputFormatter = DateTimeFormatter.ISO_DATE;
 DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern(outputFormat).withLocale(Locale.US);
 
-LocalDate transformedDate = LocalDate.from(inputFormatter.parse(inputDate));
+LocalDate parsedDate = LocalDate.from(inputFormatter.parse(inputDate));
+String outputDate = parsedDate.format(outputFormatter);
+`````
+
+Full list of Zone IDs: [Java Time Zone Ids](docs/java-time-zone-ids.md)
+
+## Example 2: Custom Date Format to UTC Date
+
+```java
+String inputFormat = "MMMM dd, yyyy";
+
+DateTimeFormatter inputFormatter = DateTimeFormatter.ofPattern(inputFormat).withLocale(Locale.US);
+DateTimeFormatter outputFormatter = DateTimeFormatter.ISO_DATE;
+
+LocalDate parsedDate = LocalDate.from(inputFormatter.parse(inputDate));
+String utcDate = parsedDate.format(outputFormatter);
 ```
